@@ -59,6 +59,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -121,6 +124,8 @@ p { margin: 0 0 var(--s2); }
   box-shadow: 0 10px 26px var(--glow);
 }
 
+main { flex: 1 0 auto; }
+
 /* ===== Nav ===== */
 .nav {
   position: sticky;
@@ -150,6 +155,7 @@ p { margin: 0 0 var(--s2); }
   transition: color 0.2s ease;
 }
 .links a:not(.btn):hover { color: var(--accent); }
+.links a[aria-current="page"]:not(.btn) { color: var(--accent); font-weight: 700; }
 
 .menu-toggle { position: absolute; opacity: 0; pointer-events: none; }
 .hamburger { display: none; cursor: pointer; padding: var(--s1); }
@@ -228,6 +234,9 @@ p { margin: 0 0 var(--s2); }
 .f4 { background: #6d3df0; }
 .f5 { background: #0d9f61; }
 .f6 { background: #0a86c9; }
+
+.explore { display: block; text-decoration: none; color: inherit; }
+.explore:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; }
 
 /* ===== Specs ===== */
 .spec-table {
